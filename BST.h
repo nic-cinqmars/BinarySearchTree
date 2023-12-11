@@ -1,27 +1,27 @@
 #pragma once
+#include "Node.h"
+#include <queue>
+#include <string>
+#include <stack>
+#include <iostream>
+
 class BST
 {
 private:
-	struct Node
-	{
-		int value;
-		Node* left;
-		Node* right;
-	};
-
 	Node* root;
+	int getHeightFromNode(Node* node);
 
 public:
-	BST(Node* root);
+	BST() : root(nullptr) {};
 
 	~BST();
 
-	void insertNode(Node* root, int value);
-	void deleteNode(Node* root, int value);
-	void displayNodesAtLevel(Node* root, int level);
-	int getTreeHeight(Node* root);
-	void displayDescendantsOfNode(Node* root, int value);
-	// int getQuantityOfUnbalancedNodes(Node* root); (BONUS)
-	// void displayAscendantsOfNode(Node* root, int value); (BONUS)
+	void insertNode(int value);
+	void deleteNode(int value);
+	std::string getNodesAtLevel(int level);
+	int getTreeHeight();
+	std::string getDescendantsOfNode(int value);
+	int getQuantityOfUnbalancedNodes();
+	std::string getAscendantsOfNode(int value);
 };
 
